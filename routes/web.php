@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+route::get('test',function(){
+	return view('admin.book.add');
+});
+?>
