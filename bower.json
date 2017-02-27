@@ -1,0 +1,32 @@
+{
+  "name": "Book Review",
+  "description": "",
+  "main": "",
+  "authors": [
+    "tanhuy2110 <kute2110@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/tanhuy2110/brs_54",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-social": "^5.1.1",
+    "datatables-responsive": "^2.1.1",
+    "datatables-plugins": "^1.10.13",
+    "eve-raphael": "0.5.0",
+    "holderjs": "^2.9.4",
+    "Flot": "flot#^0.8.3",
+    "flot.tooltip": "^0.9.0",
+    "mocha": "^3.2.0",
+    "metisMenu": "^2.6.3",
+    "raphael": "^2.2.7",
+    "sb-admin-2": "*"
+  }
+}
