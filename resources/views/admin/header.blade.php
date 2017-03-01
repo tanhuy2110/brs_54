@@ -18,6 +18,5 @@
     <!-- DataTables CSS -->
     {{ Html::style('bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}
     <!-- DataTables Responsive CSS -->
-
-    {{ Html::style('css/style.css') }}
+    
 </head>

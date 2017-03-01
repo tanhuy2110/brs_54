@@ -1,4 +1,5 @@
-@extends('admin.header')
+@include('admin.header')
+{{ Html::style('css/page/page.css') }}
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -56,11 +57,11 @@
         <div class="row main-left">
             <div class="col-md-3 ">
                 <ul class="list-group" id="menu">
-                    <li href="#" class="list-group-item menu1 active">
+                    <li href="#" class="list-group-item menu-left-page active">
                         {{ trans('label.menu') }}
                     </li>
 
-                    <li href="#" class="list-group-item menu1">
+                    <li href="#" class="list-group-item menu-left-page">
                         <a href="#">{{ trans('label.category') }}</a>
                     </li>
                     <ul>
@@ -72,7 +73,7 @@
                         </li>
                     </ul>
 
-                    <li href="#" class="list-group-item menu1">
+                    <li href="#" class="list-group-item menu-left-page">
                         <a href="#">{{ trans('label.user') }}</a>
                     </li>
                     <ul>
@@ -95,6 +96,8 @@
         <!-- /.row -->
     </div>
     <!-- end Page Content -->
-    @extends('admin.footer')
+    @include('admin.footer')
+    {{ Html::script('js/page/page.js') }}
+    
 </body>
 </html>

@@ -1,7 +1,7 @@
 @extends('pages.top_left_menu')
 @section('bodypage')
     <div class="col-lg-9">
-        <h1 class="title-top">{{ trans('label.user') }}</h1>
+        <h3 class="title-top">{{ trans('label.user') }}</h3>
         <!-- Author -->
         <p class="lead">
             {{ trans('label.by')}} <a href="#">John Henry</a>
