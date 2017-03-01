@@ -32,7 +32,7 @@
             </div>
             <div class="form-group">
                 {!! Form::label('name', trans('admin.description'), ['class' => 'control-label']) !!}
-                {!! Form::textarea('txtDescription', old('txtDescription'), ['class' => 'form-control']) !!}
+                {!! Form::textarea('txtDescription', old('txtDescription'), ['class' => 'form-control','rows' => '4']) !!}
             </div>
             {!! Form::submit(trans('admin.add'), ['class' => 'btn btn-primary btn_save']) !!}
             {!! Form::reset(trans('admin.reset'), ['class' => 'btn btn-primary btn-danger']) !!}

@@ -13,9 +13,8 @@
         <tbody>
             <tr class="odd gradeX" align="center">
                 <td>1</td>
-                <td>quoctuan</td>
+                <td>liku</td>
                 <td>Superadmin</td>
-                <td>Hiện</td>
                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> {{ trans('admin.delete') }}</a></td>
                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">{{ trans('admin.edit') }}</a></td>
             </tr>

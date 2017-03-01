@@ -13,6 +13,3 @@
 <!-- DataTables JavaScript -->
 {{ Html::script('bower_components/DataTables/media/js/jquery.dataTables.min.js') }}
 {{ Html::script('bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}
-
-<!-- My JavaScrip -->
-{{ Html::script('js/style.js') }}

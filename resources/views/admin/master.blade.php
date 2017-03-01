@@ -1,4 +1,5 @@
-@extends('admin.header')
+@include('admin.header')
+{{ Html::style('css/admin/admin.css') }}
 <body>
     <div id="wrapper">
         <!-- Navigation -->
@@ -115,7 +116,8 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    @extends('admin.footer')
+    @include('admin.footer')
+    {{ Html::script('js/admin/admin.js') }}
 </body>
 
 </html>
