@@ -1,7 +1,26 @@
 @extends('admin.master')
 @section('content')
+    <div class="col-lg-12">
+        <h1 class="page-header">{{ trans('admin.category') }}
+            <small>{{ trans('admin.add') }}</small>
+        </h1>
+    </div>
     <div class="col-lg-7" style="padding-bottom:120px">
-        {!! Form::open(['method' => 'post']) !!}
+        @if (count($errors))
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        @if (session('notification'))
+            <div class="alert alert-success">
+                {{ session('notification') }}
+            </div>
+        @endif
+        {!! Form::open([ 'method' => 'post', 'action' => 'CategoryController@store' ]) !!}
         	<div class="form-group">
                 {!! Form::label('name', trans('admin.category'), ['class' => 'control-label']) !!}
                 {!! Form::text('txtCateName', old('txtCateName'), ['class' => 'form-control']) !!}
