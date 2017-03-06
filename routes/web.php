@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-route::get('test',function(){
-	return view('pages.viewuser');
+Route::group(['prefix' => 'admin'], function(){
+    Route::resource('category', 'CategoryController');
+    Route::resource('book', 'BookController');
 });
-?>
