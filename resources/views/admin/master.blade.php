@@ -6,7 +6,7 @@
         <nav class="navbar navbar-default navbar-static-top" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">{{ trans('label.toogle') }}</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -21,12 +21,12 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> {{trans('label.userprofile')}}</a>
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> {{ trans('label.userprofile') }}</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> {{trans('label.setting')}}</a>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> {{ trans('label.setting') }}</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> {{trans('label.logout')}}</a>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> {{ trans('label.logout') }}</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -49,40 +49,40 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> {{trans('admin.dashboard')}}</a>
+                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> {{ trans('admin.dashboard') }}</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>{{trans('admin.category')}}<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>{{ trans('admin.category') }}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">{{trans('admin.listcategory')}}</a>
+                                    <a href="{{ action('CategoryController@index') }}">{{ trans('admin.listcategory') }}</a>
                                 </li>
                                 <li>
-                                    <a href="#">{{trans('admin.addcategory')}}</a>
+                                    <a href="{{ action('CategoryController@create') }}">{{ trans('admin.addcategory') }}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-cube fa-fw"></i>{{trans('admin.book')}}<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-cube fa-fw"></i>{{ trans('admin.book') }}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">{{trans('admin.addbook')}}</a>
+                                    <a href="#">{{ trans('admin.addbook') }}</a>
                                 </li>
                                 <li>
-                                    <a href="#">{{trans('admin.listbook')}}</a>
+                                    <a href="#">{{ trans('admin.listbook') }}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i>{{trans('admin.user')}}<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-users fa-fw"></i>{{ trans('admin.user') }}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">{{trans('admin.adduser')}}</a>
+                                    <a href="#">{{ trans('admin.adduser') }}</a>
                                 </li>
                                 <li>
-                                    <a href="#">{{trans('admin.listuser')}}</a>
+                                    <a href="#">{{ trans('admin.listuser') }}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -98,11 +98,6 @@
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">{{trans('admin.user')}}
-                            <small></small>
-                        </h1>
-                    </div>
                     <!-- /.col-lg-12 -->
                     @yield('content')
                 </div>
