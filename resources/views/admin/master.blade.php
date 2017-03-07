@@ -67,10 +67,10 @@
                             <a href="#"><i class="fa fa-cube fa-fw"></i>{{ trans('admin.book') }}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">{{ trans('admin.addbook') }}</a>
+                                    <a href="{{ action('BookController@index') }}">{{ trans('admin.listbook') }}</a>
                                 </li>
                                 <li>
-                                    <a href="#">{{ trans('admin.listbook') }}</a>
+                                    <a href="{{ action('BookController@create') }}">{{ trans('admin.addbook') }}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

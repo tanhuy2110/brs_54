@@ -30,6 +30,9 @@
         'adduser' => 'Add user',
         'listuser' => 'List user',
         'list' => 'List',
+        'rating' => 'Rating',
+        'image' => 'Image',
+        'choose_category' => 'Vui lòng chọn thể loại',
         'err' => [
             'category' => [
                 'name' => 'Bạn chưa nhập tên thể loại',
@@ -44,6 +47,7 @@
             'cateDelete' => 'Bạn đã xóa thể loại thành công',
             'book' => 'Bạn đã thêm sách thành công',
             'deleteConfirm' => 'Are you sure you want to delete?',
+            'failchoose' => 'Không thể chọn được sách',
         ],
     ];
 ?>
