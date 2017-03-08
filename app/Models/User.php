@@ -41,6 +41,11 @@ class User extends Authenticatable
         return $this->role;
     }
 
+    public function setPasswordAttribute($pass)
+    {
+        $this->attributes['password'] = bcrypt($pass);
+    }
+    
     public function followers()
     {
         return $this->hasMany(Relationship::class);

@@ -79,10 +79,8 @@
                             <a href="#"><i class="fa fa-users fa-fw"></i>{{ trans('admin.user') }}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">{{ trans('admin.adduser') }}</a>
-                                </li>
-                                <li>
-                                    <a href="#">{{ trans('admin.listuser') }}</a>
+                                    <a href="{{ action('UserController@index') }}">{{ trans('admin.listuser') }}</a>
+                                    <a href="{{ action('UserController@create') }}">{{ trans('admin.addtuser') }}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
