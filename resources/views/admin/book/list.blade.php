@@ -27,6 +27,7 @@
             </tr>
         </thead>
         <tbody>
+            <div id="hide" data-mesage=">{{ trans('admin.notification.deleteConfirm') }}"></div>
             @foreach ($books as $value)
                 <tr class="odd gradeX" align="center">
                     <td>{{ $value->id }}</td>
