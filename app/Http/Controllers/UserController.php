@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\LoginAdminRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -18,6 +20,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
+        
         return view('admin.user.list', compact('users'));
     }
 
@@ -25,8 +28,10 @@ class UserController extends Controller
     {
         try {
             $user = User::findOrFail($id);
+
             return view('admin.user.edit', compact('user'));
         } catch(\Exception $e){
+
             return redirect()->action('UserController@index')->with('notification', trans('admin.notification.failchoose'));
         }
     }
@@ -49,6 +54,7 @@ class UserController extends Controller
         }
 
         $userAvatar = $file->storeAs(config('book.userAvatar'), $fileName);
+
         return $userAvatar;
         
     }
@@ -64,6 +70,7 @@ class UserController extends Controller
         }
         $user = $this->user->create($input);    
         if ($user) {
+
             return redirect()->action('UserController@index')->with('notification', trans('admin.notification.addsuccess'));
         }
 
@@ -76,6 +83,7 @@ class UserController extends Controller
         $input = $request->all();
         $user->update($input);
         if ($user) {
+
             return redirect()->action('UserController@index')->with('notification', trans('admin.notification.editsuccess'));
         }
 
@@ -85,10 +93,34 @@ class UserController extends Controller
     public function destroy($id)
     {
         try {
-            User::findOrFail($id)->delete();  
+            User::findOrFail($id)->delete();
+
             return redirect()->action('UserController@index')->with('notification', trans('admin.notification.userDelete'));
         } catch(\Exception $e){
+
             return redirect()->action('UserController@index')->with('notification', trans('admin.notification.fail'));
         }
+    }
+
+    public function getLoginAdmin()
+    {
+        return view('admin.login');
+    }
+
+    public function postLoginAdmin(LoginAdminRequest $request)
+    {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+
+            return redirect()->action('UserController@index');
+        }
+
+        return redirect()->back()->with('notification', trans('admin.notification.faillogin'));
+    }
+
+    public function getLogoutAdmin()
+    {
+        Auth::logout();
+
+        return redirect()->action('UserController@getLoginAdmin');
     }
 }

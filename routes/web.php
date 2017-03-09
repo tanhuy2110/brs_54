@@ -14,7 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::group(['prefix' => 'admin'], function(){
+
+Route::get('admin','UserController@getLoginAdmin');
+Route::post('admin','UserController@postLoginAdmin');
+Route::get('logout', 'UserController@getLogoutAdmin');
+Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function(){
     Route::resource('category', 'CategoryController');
     Route::resource('book', 'BookController');
     Route::resource('user', 'UserController');

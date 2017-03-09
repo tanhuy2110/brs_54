@@ -1,5 +1,9 @@
 <?php
-	return [
-		'bookImage' => 'public/book',
-		'userAvatar' => 'public/user',
-	];
+    return [
+        'bookImage' => 'public/book',
+        'userAvatar' => 'public/user',
+        'isAdmin' => [
+            'user' => 0,
+            'admin' => 1,
+        ]
+    ];

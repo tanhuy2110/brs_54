@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
     <div class="col-lg-12">
-        <h1 class="page-header">{{ trans('admin.category') }}
+        <h1 class="page-header">{{ trans('admin.user') }}
             <small>{{ trans('admin.list') }}</small>
         </h1>
     </div>
