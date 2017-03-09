@@ -35,8 +35,10 @@
         'adduser' => 'Add user',
         'listuser' => 'List user',
         'list' => 'List',
+        'sigin' => 'Please Sign In',
         'rating' => 'Rating',
         'image' => 'Image',
+        'login' => 'Login',
         'choose_category' => 'Vui lòng chọn thể loại',
         'err' => [
             'category' => [
@@ -54,6 +56,8 @@
             'deleteConfirm' => 'Are you sure you want to delete?',
             'failchoose' => 'Không thể chọn được sách',
             'userDelete' => 'Bạn đã xóa 1 thành viên',
+            'faillogin' => 'Email hoặc mật khẩu không đúng!!!!',
+            'isAdmin' => 'Bạn không phải là Admin!!!!!',
         ],
     ];
 ?>

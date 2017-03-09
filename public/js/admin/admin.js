@@ -12,3 +12,4 @@ function ConfirmDelete()
     else
         return false;
 }
+$('.alert').delay(500).fadeOut(3500);
