@@ -24,6 +24,7 @@ $(".menu-left-page").click(function(event) {
         style = style + "font-size:" + settings.size + "; ";
         style = style + "color:" + settings.coloroff + "; ";
         style = style + "cursor:" + settings.cursor + "; ";
+
         
         if (method == 'create'){
             this.each(function(){

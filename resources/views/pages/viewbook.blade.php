@@ -91,6 +91,7 @@
                             $descSub = substr($desc, 0, 30);
                         @endphp
                         <div class="row booksame">
+
                             <div class="col-md-5">
                                 <a href="{{ action('Pages\PagesController@viewBooks', $rb->id) }}">
                                     <img class="img-responsive" src="{!! Storage::url($rb['image']) !!}" alt="">
