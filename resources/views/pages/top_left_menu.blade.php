@@ -58,35 +58,23 @@
             <div class="col-md-3 ">
                 <ul class="list-group" id="menu">
                     <li href="#" class="list-group-item menu-left-page active">
-                        {{ trans('label.menu') }}
+                        {{ trans('label.category') }}
                     </li>
+                    @foreach ($categories as $category)
+                        @if (count ($category -> books ) > 0)
+                            <li href="#" class="list-group-item menu-left-page">
+                                <a href="#">{{ $category->name }}</a>
+                            </li>
 
-                    <li href="#" class="list-group-item menu-left-page">
-                        <a href="#">{{ trans('label.category') }}</a>
-                    </li>
-                    <ul>
-                        <li class="list-group-item">
-                            <a href="#">{{ trans('label.heathy') }}</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">{{ trans('label.animal') }}</a>
-                        </li>
-                    </ul>
-
-                    <li href="#" class="list-group-item menu-left-page">
-                        <a href="#">{{ trans('label.user') }}</a>
-                    </li>
-                    <ul>
-                        <li class="list-group-item">
-                            <a href="#">Neymar</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">Messi</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">Ibra</a>
-                        </li>
-                    </ul>
+                            <ul>
+                                @foreach ($category->books as $book)
+                                    <li class="list-group-item">
+                                        <a href="{{ action('Pages\PagesController@viewBooks', $book->id) }}">{{ $book->title  }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    @endforeach
                 </ul>
             </div>
             <div class="col-md-9">

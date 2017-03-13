@@ -23,3 +23,5 @@ Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function(){
     Route::resource('book', 'BookController');
     Route::resource('user', 'UserController');
 });
+Route::get('index', 'Pages\PagesController@index');
+Route::get('viewbook/{id}', 'Pages\PagesController@viewBooks');

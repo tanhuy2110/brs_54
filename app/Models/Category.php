@@ -16,4 +16,8 @@ class Category extends Model
         return $this->hasMany(Book::class);
     }
 
+    public function getTopBooks()
+    {
+    	return $this->books->sortByDESC('avg_rating')->take(5);
+    }
 }
