@@ -39,6 +39,11 @@
         'rating' => 'Rating',
         'image' => 'Image',
         'login' => 'Login',
+        'signup' => 'Please Sign Up',
+        'sigupfree' => 'Sign Up for Free',
+        'singup' => 'Get Started',
+        'forgot' => 'Forgot Password',
+        'back' => 'Welcome Back!',
         'choose_category' => 'Vui lòng chọn thể loại',
         'err' => [
             'category' => [
@@ -58,6 +63,11 @@
             'userDelete' => 'Bạn đã xóa 1 thành viên',
             'faillogin' => 'Email hoặc mật khẩu không đúng!!!!',
             'isAdmin' => 'Bạn không phải là Admin!!!!!',
+            'registersuccess' => 'Đăng ký thành công',
+            'registerfail' => 'Đăng ký thất bại',
+            'cofirmmail' => 'Vui lòng vào Email để xác nhận',
+            'verify_success' => 'Xác Nhận mail thành công',
+            'verify' => 'Verify your email address',
         ],
     ];
 ?>

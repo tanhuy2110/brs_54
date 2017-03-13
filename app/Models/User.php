@@ -12,6 +12,7 @@ use App\Models\Review;
 class User extends Authenticatable
 {
     use Notifiable;
+    const DEFAULT_AVATAR = 'user/avataDf.png';
 
     /**
      * The attributes that are mass assignable.
@@ -44,6 +45,15 @@ class User extends Authenticatable
     public function setPasswordAttribute($pass)
     {
         $this->attributes['password'] = bcrypt($pass);
+    }
+
+    protected $attributes = [
+        'avatar' => self::DEFAULT_AVATAR,
+    ];
+
+    public function setAvatarAttribute($avatar)
+    {
+        $this->attributes['avatar'] = $avatar;
     }
     
     public function followers()

@@ -27,3 +27,8 @@ Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function(){
 Route::get('index', 'Pages\PagesController@index');
 Route::get('viewbook/{id}', 'Pages\PagesController@viewBooks');
 
+Route::get('loginpage', 'Pages\PagesController@getLogin');
+Route::post('loginpage', 'Pages\PagesController@postLogin');
+Route::get('logoutpage', 'Pages\PagesController@getLogout');
+Route::post('registerpage', 'Pages\PagesController@postRegister');
+Route::get('confirm/{confirmationCode}', 'Pages\PagesController@confirm')->name('verify.email');
