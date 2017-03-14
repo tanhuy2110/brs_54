@@ -1,6 +1,11 @@
 @extends('pages.top_left_menu')
 @section('bodypage')
-    <div class="panel panel-default">            
+    <div class="panel panel-default">
+         @if (session('notification'))
+            <div class="alert alert-danger">
+                {{ session('notification') }}
+            </div>
+        @endif
         <div class="panel-heading">
             <h2>{{ trans('label.book') }}</h2>
         </div>
@@ -47,5 +52,6 @@
         </div>
     </div>
 @endsection
+{{ Html::script('js/page/page.js') }}
 </body>
 </html>

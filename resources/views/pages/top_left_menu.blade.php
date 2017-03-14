@@ -30,21 +30,19 @@
                 	
                 <ul class="nav navbar-nav pull-right">
                     <li>
-                        <a href="#">{{ trans('label.register') }}</a>
+                        <a href="{{ action('Pages\PagesController@getLogin') }}">{{ trans('label.loginorregister') }}</a>
                     </li>
-                    <li>
-                        <a href="#">{{ trans('label.login') }}</a>
-                    </li>
-                    <li>
-                        <a>
-                            <span class ="glyphicon glyphicon-user"></span>
-                            NTH
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">{{ trans('label.logout') }}</a>
-                    </li>
+                    @if ( Auth::user() )
+                        <li>
+                            <a>
+                                <span class ="glyphicon glyphicon-user"></span>
+                                {{ Auth::user()->name }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ action('Pages\PagesController@getLogout') }}">{{ trans('label.logout') }}</a>
+                        </li>
+                    @endif
                 </ul>
             </div> 
             <!-- /.navbar-collapse -->

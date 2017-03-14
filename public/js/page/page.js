@@ -3,6 +3,9 @@ $(".menu-left-page").next('ul').toggle();
 $(".menu-left-page").click(function(event) {
     $(this).next("ul").toggle(500);
 });
+
+$('.alert').delay(500).fadeOut(3500);
+
 (function ($) {
  
     $.fn.rating = function( method, options ) {
@@ -23,8 +26,7 @@ $(".menu-left-page").click(function(event) {
         var style = "";
         style = style + "font-size:" + settings.size + "; ";
         style = style + "color:" + settings.coloroff + "; ";
-        style = style + "cursor:" + settings.cursor + "; ";
-        
+        style = style + "cursor:" + settings.cursor + "; ";     
         if (method == 'create'){
             this.each(function(){
                 attr = $(this).attr('data-rating');
