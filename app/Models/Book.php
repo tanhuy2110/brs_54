@@ -44,4 +44,9 @@ class Book extends Model
         return $this->hasMany(Mark::class);
     }
     
+    public function updateAvgRating()
+    {
+        $this->avg_rating = $this->rates->avg('point');
+        $this->save;
+    }
 }

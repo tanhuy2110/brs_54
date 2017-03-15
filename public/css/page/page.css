@@ -132,4 +132,7 @@ a:hover{
 .booksame {
     margin-top: 10px;
 }
-
+.avatar-review {
+    height: 20px;
+    width: 15px;
+}
