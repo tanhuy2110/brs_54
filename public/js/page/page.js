@@ -75,8 +75,29 @@ $('.alert').delay(500).fadeOut(3500);
 
 (jQuery));
 
+var _url = data['routeStore'];
+var message = data['message'];
+
 $(document).ready(function(){
     $("#stars").rating('create', {onClick:function() { 
-        alert ( 'rating is ' + this.attr( 'data-rating' )); 
+        alert ( 'rating is ' + this.attr( 'data-rating' ));
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: _url,
+            type: 'POST',
+            data: {
+                rating: this.attr( 'data-rating' ),
+                book_id: data['bookId'],
+                user_id: data['userId'],   
+            },
+        })
+        .done(function(data) {
+            alert (message);
+        })
     }});
 });

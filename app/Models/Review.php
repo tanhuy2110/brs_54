@@ -26,7 +26,7 @@ class Review extends Model
         return $this->hasMany(Like::class);
     }
 
-    public function userLike()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
