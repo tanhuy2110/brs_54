@@ -32,3 +32,8 @@ Route::post('loginpage', 'Pages\PagesController@postLogin');
 Route::get('logoutpage', 'Pages\PagesController@getLogout');
 Route::post('registerpage', 'Pages\PagesController@postRegister');
 Route::get('confirm/{confirmationCode}', 'Pages\PagesController@confirm')->name('verify.email');
+
+Route::post('review/{id}', 'Pages\ReviewController@postReview');
+Route::delete('delete-review/{id}', 'Pages\ReviewController@deleteReview');
+Route::resource('rating', 'Pages\RatingController', ['only' => ['store', 'update']] );
+Route::get('search', 'Pages\PagesController@getSearch');

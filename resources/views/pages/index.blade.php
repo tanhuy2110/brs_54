@@ -2,7 +2,7 @@
 @section('bodypage')
     <div class="panel panel-default">
          @if (session('notification'))
-            <div class="alert alert-danger">
+            <div class="alert alert-success">
                 {{ session('notification') }}
             </div>
         @endif

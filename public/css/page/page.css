@@ -132,4 +132,15 @@ a:hover{
 .booksame {
     margin-top: 10px;
 }
-
+.avatar-review {
+    height: 20px;
+    width: 15px;
+}
+.my-img {
+    width: 200px;
+    height: 200px;
+}
+.my-panel {
+    background-color:#337AB7;
+    color:white;
+}

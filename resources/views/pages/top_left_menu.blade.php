@@ -12,7 +12,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">{{ trans('label.brand') }}</a>
+                <a class="navbar-brand" href="{{ action('Pages\PagesController@index') }}">{{ trans('label.brand') }}</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -21,17 +21,18 @@
                         <a href="#">{{ trans('label.about') }}</a>
                     </li>
                 </ul>
-                <form class="navbar-form navbar-left" role="search">
+                {!! Form::open(['method' => 'GET', 'class' => 'navbar-form navbar-left', 'action' => 'Pages\PagesController@getSearch']) !!}
                     <div class="form-group">
-	                    {!! Form::text('search', old('txtTitle'), ['class' => 'form-control', 'placeholder' => 'Search']) !!}
+	                    {!! Form::text('search', old('search'), ['class' => 'form-control', 'placeholder' => 'Search']) !!}
                     </div>
                     {!! Form::submit(trans('label.search'), ['class' => 'btn btn-default']) !!}
-                </form>
-                	
+                {!! Form::close() !!}	
                 <ul class="nav navbar-nav pull-right">
-                    <li>
-                        <a href="{{ action('Pages\PagesController@getLogin') }}">{{ trans('label.loginorregister') }}</a>
-                    </li>
+                    @if (!isset(Auth::user()->id))
+                        <li>
+                            <a href="{{ action('Pages\PagesController@getLogin') }}">{{ trans('label.login_or_register') }}</a>
+                        </li>
+                    @endif
                     @if ( Auth::user() )
                         <li>
                             <a>

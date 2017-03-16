@@ -15,8 +15,11 @@ use Mail;
 
 class PagesController extends Controller
 {
-    public function __construct()
+    protected $book;
+
+    public function __construct(Book $book)
     {
+        $this->book = $book;
         $categories = Category::all();
         view()->share(compact('categories'));
     }
@@ -82,6 +85,7 @@ class PagesController extends Controller
             $data = [
                 'confirmationCode' => $conf,
             ];
+            
             Mail::send('pages.verify_email', $data, function($message) use ($request){
             $message->to($request->email, $request->name)
                 ->subject( trans('admin.notification.verify'));
@@ -106,7 +110,6 @@ class PagesController extends Controller
 
         }
         $user = User::where('confirmation_code', $confirmationCode)->first();
-
         if (!$user) {
             return redirect()
             ->action('Pages\PagesController@index')
@@ -122,4 +125,18 @@ class PagesController extends Controller
         ->action('Pages\PagesController@index')
         ->with('notification', trans('admin.notification.verify_success'));
     }
+
+    public function getSearch(Request $request)
+    {
+        $keyword = $request->get('search');
+        $books = $this->book->search($keyword);
+
+        if (count($books)) {
+            return view('pages.search', compact('books', 'keyword'));
+        }
+        return redirect()
+            ->action('Pages\PagesController@getSearch')
+            ->with('notification', trans('admin.notification.search_err'));     
+    }
+
 }
