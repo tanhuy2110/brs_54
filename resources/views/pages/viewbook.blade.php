@@ -54,10 +54,12 @@
                         <small>{{ $review->created_at }}</small>
                     </h4>
                     <p>{{ $review->review_text }}</p>
-                    @if ( Auth::user() )
-                        {{ Form::open(['action' => ['Pages\ReviewController@deleteReview', $review->id], 'method' =>'delete', 'class' => 'form-delete', 'onsubmit' => 'return ConfirmDelete()' ]) }}
-                            {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
-                        {{ Form::close() }}                       
+                    @if (Auth::user())
+                        @if (Auth::user()->id == $review->user_id)
+                            {{ Form::open(['action' => ['Pages\ReviewController@deleteReview', $review->id], 'method' =>'delete', 'class' => 'form-delete', 'onsubmit' => 'return ConfirmDelete()' ]) }}
+                                {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+                            {{ Form::close() }}
+                        @endif                       
                         {!! Form::open(['method' => 'post']) !!}
                             <div class="form-group">
                                 {!! Form::textarea('comment', old('comment'), ['class' => 'form-control', 'rows' => '2']) !!}
@@ -97,14 +99,16 @@
                 </div>
             </div>
     </div>
-    <script>
-        var data = {
-            'routeStore': '{{ route('rating.store') }}',
-            'bookId': {{ $viewBook->id }},
-            'userId': {{ Auth::user()->id }},
-            'message': '{{ trans('admin.ratecomplete') }}',
-        }
-    </script>
+    @if (isset(Auth::user()->id))
+        <script>
+            var data = {
+                'routeStore': '{{ route('rating.store') }}',
+                'bookId': {{ $viewBook->id }},
+                'userId': {{ Auth::user()->id }},
+                'message': '{{ trans('admin.ratecomplete') }}',
+            }
+        </script>
+    @endif
 @endsection
 
 </body>

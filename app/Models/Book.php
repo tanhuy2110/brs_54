@@ -49,4 +49,12 @@ class Book extends Model
         $this->avg_rating = $this->rates->avg('point');
         $this->save;
     }
+
+    public function search($keyword) {
+        return Book::where('title', 'like', "%$keyword%")
+            ->orWhere('author', 'like', "%$keyword%")
+            ->orWhere('description', 'like', "%$keyword%")
+            ->paginate(2);
+    }
+
 }
