@@ -37,3 +37,4 @@ Route::post('review/{id}', 'Pages\ReviewController@postReview');
 Route::delete('delete-review/{id}', 'Pages\ReviewController@deleteReview');
 Route::resource('rating', 'Pages\RatingController', ['only' => ['store', 'update']] );
 Route::get('search', 'Pages\PagesController@getSearch');
+Route::resource('favorite', 'Pages\FavoriteController', ['only' => ['store', 'destroy']]);

@@ -48,6 +48,7 @@
         'choose_category' => 'Please Choose Category',
         'rate_complete' => 'Evaluate success',
         'key_word' => 'Key Word',
+        'favorite' => 'Favorite',
         'err' => [
             'category' => [
                 'name' => 'You have not entered a category name',
@@ -73,7 +74,10 @@
             'verify' => 'Verify your email address',
             'review_success' => 'Review complete',
             'review_delete' => 'Complete Delete Review',
-            'search_err' => 'No Data', 
+            'search_err' => 'No Data',
+            'favorite' => 'Favorite Complete',
+            'unFavorite' => 'Un Favorite',
+            'error' => 'Error!!!!',
         ],
     ];
 ?>

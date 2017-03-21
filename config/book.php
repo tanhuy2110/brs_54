@@ -11,4 +11,8 @@
         	'active' => 1,
         	'unactive' => 0,
         ],
+        'favoriteBook' => [
+            'favorite' => 1,
+            'unfavorite' => 0,
+        ],
     ];

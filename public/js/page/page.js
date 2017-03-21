@@ -78,7 +78,8 @@ $('.alert').delay(500).fadeOut(3500);
 var _url = data['routeStore'];
 var message = data['message'];
 
-$(document).ready(function(){
+
+$(document).ready(function () {
     $("#stars").rating('create', {onClick:function() { 
         alert ( 'rating is ' + this.attr( 'data-rating' ));
 
@@ -101,3 +102,30 @@ $(document).ready(function(){
         })
     }});
 });
+var _urlFavorite = data['favBookUrl'];
+var messageFv = data['messageFv'];
+var unFavorite = data['messageUnFv'];
+var error = data['error'];
+$("#favoriteBook").on('click',function(){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    })
+
+    $.ajax({
+        url: _urlFavorite,
+        type: 'POST',
+        data: {
+            book_id: data['bookId'],
+            user_id: data['userId'],
+        },
+    })
+    .done(function(data) {
+        if (!data) {
+            alert (unFavorite);
+        } else
+            alert (messageFv);
+    })
+})
+

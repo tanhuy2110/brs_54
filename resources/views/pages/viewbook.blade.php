@@ -18,9 +18,13 @@
         <img class="img-responsive" src="{!! Storage::url($viewBook['image']) !!}" alt="">
         <!-- Date/Time -->
         <h4><span class="glyphicon glyphicon-time"></span> {{ trans('label.publish') }} <strong>{{ $viewBook->public_date }}</strong> </h4>
-        <div id="stars" data-rating="{{ $viewBook->avg_rating }}"></div>
+        <div class="viewBook-st-fv">
+            <li id="stars" data-rating="{{ $viewBook->avg_rating }}"></li>
+            <li>
+                {!! Form::submit(trans('admin.favorite'), ['class' => 'btn btn-primary btn_save', 'id' => 'favoriteBook']) !!}
+            </li>
+        </div>
         <hr>
-
         <!-- Post Content -->
         <div class="bs-callout bs-callout-info">
             <h2 >{{ trans('label.description') }}</h2>
@@ -105,7 +109,11 @@
                 'routeStore': '{{ route('rating.store') }}',
                 'bookId': {{ $viewBook->id }},
                 'userId': {{ Auth::user()->id }},
-                'message': '{{ trans('admin.ratecomplete') }}',
+                'message': '{{ trans('admin.notification.rateComplete') }}',
+                'messageFv': '{{ trans('admin.notification.favorite') }}',
+                'messageUnFv': '{{ trans('admin.notification.unFavorite')}}',
+                'favBookUrl': '{{ route('favorite.store') }}',
+                'error': '{{ trans('admin.notification.error')}}',
             }
         </script>
     @endif

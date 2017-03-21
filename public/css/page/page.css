@@ -144,3 +144,16 @@ a:hover{
     background-color:#337AB7;
     color:white;
 }
+.viewBook-st-fv {
+    list-style-type:none;
+}
+.viewBook-st-fv li {
+    display:inline;
+    text-decoration:none;
+}
+.viewBook-st-fv li:last-child {
+    padding-left: 340px;
+}
+.highlight {
+    background: yellow;
+}

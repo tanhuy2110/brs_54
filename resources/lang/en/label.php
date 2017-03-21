@@ -56,5 +56,6 @@
         'verify_email_title' => 'Verify Your Email Address',
         'verify_email_body' => 'Thanks for creating an account with us. Please follow the link below to verify your email address',
         'cofirm_mail' => 'Confirm Email',
+        'like' => 'Like'
     ];
 ?>
